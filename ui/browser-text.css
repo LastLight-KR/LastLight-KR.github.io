@@ -1,0 +1,149 @@
+/* LastLight native text overlay: text only, never a replacement UI skin. */
+@font-face {
+  font-family: "LastLightUI";
+  src: url("Pretendard-VF.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+#lastlight-native-text.ll-text-root {
+  --ll-text-font: "LastLightUI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+  --ll-text-font-gothic: "LastLightGothic", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+  --ll-text-font-serif: "LastLightSerif", "Noto Serif KR", "Batang", serif;
+  position: fixed;
+  inset: 0;
+  z-index: 22;
+  display: block;
+  overflow: hidden;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  contain: layout style paint;
+  font-family: var(--ll-text-font);
+  font-synthesis: none;
+  text-shadow: none;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+#lastlight-native-text .ll-text-item {
+  position: absolute;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+}
+
+#lastlight-native-text .ll-text-region {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+#lastlight-native-text .ll-text-region.ll-interactive-region {
+  pointer-events: auto;
+}
+
+#lastlight-native-text .ll-text-content,
+#lastlight-native-text .ll-text-copy,
+#lastlight-native-text .ll-text-input,
+#lastlight-native-text .ll-text-select,
+#lastlight-native-text .ll-rich,
+#lastlight-native-text .ll-rich-copy {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  box-shadow: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-synthesis: none;
+  letter-spacing: normal;
+  text-shadow: none;
+  text-indent: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lastlight-native-text .ll-plain-body,
+#lastlight-native-text .ll-plain-line,
+#lastlight-native-text .ll-text-copy,
+#lastlight-native-text .ll-rich-body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-synthesis: none;
+  text-shadow: none;
+}
+
+#lastlight-native-text .ll-text-input,
+#lastlight-native-text .ll-text-select {
+  min-width: 0;
+  min-height: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  caret-color: currentColor;
+  cursor: text;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+#lastlight-native-text .ll-text-input[readonly],
+#lastlight-native-text .ll-text-select:disabled {
+  cursor: default;
+}
+
+#lastlight-native-text .ll-text-input::placeholder {
+  color: currentColor;
+  opacity: 0.58;
+}
+
+#lastlight-native-text .ll-text-select {
+  color: inherit;
+}
+
+#lastlight-native-text .ll-text-select option {
+  color: var(--ll-option-color, #ebece4);
+  background: var(--ll-option-bg, #1d282c);
+  font-family: var(--ll-text-font);
+}
+
+#lastlight-native-text .ll-rich {
+  scrollbar-color: rgba(255, 255, 255, 0.42) transparent;
+  scrollbar-width: thin;
+}
+
+#lastlight-native-text .ll-rich::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+#lastlight-native-text .ll-rich::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#lastlight-native-text .ll-rich::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.42);
+  border-radius: 3px;
+}
+
+#lastlight-native-text .ll-rich-link {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+}
+
+#lastlight-native-text .ll-rich-link:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 1px;
+}
